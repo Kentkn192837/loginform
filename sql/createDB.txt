@@ -1,0 +1,16 @@
+CREATE DATABASE portfolio DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL ON portfolio.* TO 'testuser'@'localhost' IDENTIFIED BY 'testpass';
+
+USE portfolio;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (id MEDIUMINT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                    username VARCHAR(50) NOT NULL,
+                    password VARCHAR(255) NOT NULL
+                    );
+
+CREATE TABLE bbs (id MEDIUMINT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                username VARCHAR(50) NOT NULL,
+                comment VARCHAR(300) NOT NULL,
+                date VARCHAR(100) NOT NULL
+                );
